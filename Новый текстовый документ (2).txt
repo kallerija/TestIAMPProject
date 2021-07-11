@@ -1,0 +1,94 @@
+
+{color:#00875a}я,как manager{color}
+
+{color:#00875a}хочу с помощью отчета отслеживать данные об Assignments сотрудников{color}
+
+{color:#00875a}что позволит {color}
+----
+ *Implementation Notes*
+ # Название отчета * Assignments report* 
+ ## при формировании файла, добавлять DateTime (?) уточнить
+ # Пример отчета [^ Assignments report.xlxs]
+ # Доступ к данным отчета  (?) уточнить
+ # Параметры формирования отчета:
+
+||Параметр||Тип/Доступные значения||По умолчанию||Comment||
+| Period|Календарь. Должна быть возможность выбрать произвольный период|текущий месяц| |
+| |Справочник |Пусто| |
+ # Бизнес-правила для параметров отчёта:
+ ** Отчет должен строиться за произвольный период дат
+ ** Каждый Assignment  должен отображаться в отчете: одной строкой
+ # Название листа *Assignments*
+ # Заголовок 
+ ## Fiscal Year 
+ ## Quarter
+ # Поля  и их описание:
+
+||# ||FieldName||Description||Comment   ||
+|1|Pin| Pin сотрудника| |
+| 2|Name| Eng Name сотрудника| |
+| 3|Context| Context | |
+| 4|Calculation Type| Тип калькуляции Game / Active|  |
+|5|Calculation Name| Название калькуляции| |
+|6|Calculation Tag|Тэг калькуляции| |
+|6|Month From|Месяц начала  периода| |
+|7|Month To| Мясяц окончания периода| |
+| 8|Assignment| Название assignment | |
+|9|Assignment type| Тип  assignment |  FBU,|
+|10|Area| Area | |
+|11|Plan| Plan Budget | |
+|12|Fact| Fact Budget| |
+|13|Location| Локация| |
+
+ 
+
+ *Страница Parameters (?)*
+|Period|
+|Parameter|
+|Created By|
+|Create Date|
+
+======
+
+*Редактирование Calculation с помощью excel- файла*
+
+{color:#00875a}Как Administrator{color}
+ {color:#00875a} я хочу для  существющих Assignment, с помощью excel-файла,  выполнить массовое{color}
+ * {color:#00875a}редактирование {color}
+ * {color:#00875a}удаление{color}
+
+{color:#00875a}что позволит сэкономить время необходимое для редактирования каждого  Assignment  вручную{color}
+
+{color:#00875a} {color}
+----
+*Implementation Notes*
+ # Добавить кнопку + pop-up для загрузки файла
+ ## Шаблон хранить в системе (?) уточнить 
+ # Пример файла загрузки 
+
+ 
+||# ||FieldName||Type||Comment   ||
+|1|Pin|Обязательное| |
+| 2|Name|Обязательное| |
+| |Fiscal Year|Обязательное| |
+| |Quarter|Обязательное| |
+| 3|Context|Обязательное. если у сотрудника несколько  Context. Если Context единственный, то может быть пусто| 1Context - column can be empty in case of 1 context. Column should be filled if Manager has more then 1 context.|
+
+ 
+
+ 3. При загрузке файла проверять см. список валидаций - 
+
+что делать если есть ошибка? остановить все или загрузить что можно?
+
+4. Если все ОК, то переходить к обработке строк
+
+5.  Для всех  Assignment у которых Delete пусто обновлять
+ # Plan
+ # Fact
+ # Location
+
+6.  Assignment у которых Delete НЕ пусто удалять
+
+7. Сообщение об успешной загрузке файла
+
+ 
