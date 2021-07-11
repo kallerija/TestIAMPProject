@@ -1,12 +1,5 @@
 
-{color:#00875a}я,как manager{color}
-
-{color:#00875a}хочу с помощью отчета отслеживать данные об Assignments сотрудников{color}
-
-{color:#00875a}что позволит {color}
-----
- *Implementation Notes*
- # Название отчета * Assignments report* 
+{ # Название отчета * Assignments report* 
  ## при формировании файла, добавлять DateTime (?) уточнить
  # Пример отчета [^ Assignments report.xlxs]
  # Доступ к данным отчета  (?) уточнить
